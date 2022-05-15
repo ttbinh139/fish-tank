@@ -2,11 +2,23 @@ class Fish extends Denizen {
 
   constructor(options) {
     super(options);
-    this.imageUri = '/images/fish01.png';
+    this.imageUri = '/images/fish03.png';
+    //this.images = ['/images/fish01.png', '/images/fish1.jpg', '/images/fish2.png', '/images/fish3.png'];
     this.maxSwimSpeed = 100;
     this.makeNewVelocity();
     this.isTasty = true;
+    this.type = 0; // normal fish
   }
+
+  get getType() {
+    return this.type;
+  }
+
+  /* get imageUri() {
+    let length = this.images.length;
+    let ran = Math.floor(Math.random()*length);
+    return this.images[ran];
+  } */
 
   generateSwimVelocity(max, min) {
     if (min && min > max) {
